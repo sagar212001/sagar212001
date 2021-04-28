@@ -1,0 +1,89 @@
+#include <stdio.h>
+
+int main()
+{
+    char ch;
+    printf("enter the character \n");
+    scanf("%c",&ch);
+    int n=ch;
+    printf("the ascii value of char %c is %d",ch,n);
+}
+#include<stdio.h>
+int main()
+{
+    char str[100];
+    int count=0;
+    printf("enter the string\n");
+    scanf("%[^\n]s",str);
+    for(int i=0;str[i]!='\0';i++)
+    {
+        int n=str[i];
+        if(n==32)
+        {
+            count++;
+        }
+    }
+    printf("the number of words are %d",count+1);
+}
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],result;
+    int len;
+    int max=-1;
+    int freq[256]={0};
+    printf("enter the string\n");
+    scanf("%s[^\n]",str);
+    len=strlen(str);
+    for(int i=0;i<len;i++)
+    {
+        freq[str[i]]++;
+    }
+    for(int i=0;i<len;i++)
+    {
+        if(max<freq[str[i]])
+        {
+            max=freq[str[i]];
+            result=str[i];
+        }
+    }
+    printf("the maximum occuring character is a string is %c of times %d",result,max);
+    return 0;
+}
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+    int val,max=0;
+    int min=9999;
+    char str[100];
+     while(1)
+     {
+         printf("enter the the string\n");
+         scanf("%[^\n]s",str);
+          val=atoi(str);
+          int k=strcmp(str,"done");
+          if(k==0)
+          {
+              printf("%d\n",max);
+              printf("%d\n",min);
+              exit(0);
+          }
+          if (val==0)
+             continue;
+          else
+          {
+              if(val>max)
+                max=val;
+             if (val<min)
+                min=val;
+             continue;
+          }
+     }
+}
+        
+    
+    
